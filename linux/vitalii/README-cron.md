@@ -32,3 +32,17 @@ ___
 Most cron implementations simply interpret crontab entries in the system time zone setting that the cron daemon runs under.
 This can be a source of dispute if a large multi-user machine has users in several time zones, especially if the system default time zone includes the potentially confusing DST.
 Thus, a cron implementation may as a special case recognize lines of the form **"CRON_TZ=\<time zone\>"** in user crontabs, interpreting subsequent crontab entries relative to that time zone.
+___
+
+## Basic comands ##
+1. Open the crontab configuration file for the current user by entering the following command:
+```crontab -e```
+
+> If this is your first time accessing the crontab, the system creates a new file. In Ubuntu 22.04, users are prompted to select a preferred text editor. Enter the corresponding number, for example, 1 for nano, to open the crontab file.
+
+2. To schedule a job for a different user, add the -u option and the username:
+```crontab -u [username] -e```
+
+3. Enter the following command to list all cron jobs on your system without opening the crontab configuration file:
+```crontab -l```
+
